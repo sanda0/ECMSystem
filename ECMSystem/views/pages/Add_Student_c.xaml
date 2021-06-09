@@ -1,0 +1,280 @@
+﻿<Page x:Class="ECMSystem.views.pages.Add_student_c"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ECMSystem.views.pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1100"
+      Title="Add_student_c">
+
+    <Grid Margin="10">
+        <materialDesign:Card UniformCornerRadius="10" Background="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90"></RowDefinition>
+                    <RowDefinition Height="280"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" 
+                            Margin="25,25,0,0" 
+                            Orientation="Horizontal" 
+                            HorizontalAlignment="Left">
+                    <TextBlock
+                        FontSize="40"
+                        Foreground="Gray"
+                        >Add Student</TextBlock>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" 
+                            Margin="10,10,10,10" 
+                            Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" >
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"></RowDefinition>
+                            <RowDefinition Height="80"></RowDefinition>
+                            <RowDefinition Height="70"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0" 
+                                    Orientation="Horizontal" 
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center" >
+
+                            <StackPanel Orientation="Vertical" 
+                                            VerticalAlignment="Bottom">
+                                <TextBox
+                                        FontSize="15"
+                                        x:Name="f_name"
+                                        Width="300"
+                                        materialDesign:HintAssist.Hint="First Name"
+                                        materialDesign:TextFieldAssist.HasClearButton="True"
+                                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                        VerticalAlignment="Center" />
+                                <TextBlock Foreground="red" 
+                                               x:Name="f_name_v" >*</TextBlock>
+                            </StackPanel>
+
+                            <StackPanel  Margin="30,0,0,0" 
+                                             Orientation="Vertical" 
+                                             VerticalAlignment="Bottom">
+                                <TextBox
+                                        Grid.Row="0"
+                                        FontSize="15"
+                                        x:Name="l_name"
+                                        Width="300"
+                                        materialDesign:HintAssist.Hint="Last Name "
+                                        materialDesign:TextFieldAssist.HasClearButton="True"
+                                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                        VerticalAlignment="Center" />
+                                <TextBlock  Foreground="red" 
+                                                x:Name="l_name_v" >*</TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Margin="30,15,0,0" 
+                                             Orientation="Vertical" 
+                                             HorizontalAlignment="Center" 
+                                             VerticalAlignment="Center">
+                                <DatePicker
+                                            x:Name="dob"
+                                            Width="300"
+                                            FontSize="15"
+                                            materialDesign:HintAssist.Hint="Date Of Birth" />
+
+                                <TextBlock  Foreground="red" 
+                                                    x:Name="dob_v" >*
+                                </TextBlock>
+
+                            </StackPanel>
+                        </StackPanel>
+
+
+
+
+                        <StackPanel Grid.Row="1"
+                                    
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Top">
+
+                            <StackPanel  Orientation="Vertical">
+                                <TextBox
+                                    FontSize="15"
+                                    x:Name="nic"
+                                    Width="300"
+                                    materialDesign:HintAssist.Hint="NIC Number "
+                                    materialDesign:TextFieldAssist.HasClearButton="True"
+                                    TextChanged="nic_TextChanged"
+                                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                    VerticalAlignment="Center" />
+
+                                <TextBlock  Foreground="red" 
+                                            x:Name="nic_v" >*
+                                </TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Vertical" Margin="30,0,0,0">
+                                <TextBox
+                                FontSize="15"
+                                x:Name="tel"
+                                Width="300"
+                                materialDesign:HintAssist.Hint="Telephone Number "
+                                materialDesign:TextFieldAssist.HasClearButton="True"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                VerticalAlignment="Center" />
+                                <TextBlock  Foreground="red" x:Name="tele_v" >*</TextBlock>
+
+                            </StackPanel>
+
+                            <StackPanel Margin="30,0,0,0" Orientation="Vertical">
+                                <TextBox
+                                    FontSize="15"
+                                    x:Name="addr"
+                                    Width="300"
+                                    materialDesign:HintAssist.Hint="Address "
+                                    materialDesign:TextFieldAssist.HasClearButton="True"
+                                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                    VerticalAlignment="Center" />
+                                <TextBlock  Foreground="red" x:Name="addr_v" >*</TextBlock>
+
+                            </StackPanel>
+                        </StackPanel>
+
+
+                        <StackPanel Grid.Row="2" 
+                                    Orientation="Horizontal" 
+                                    HorizontalAlignment="Left" 
+                                    VerticalAlignment="Center">
+
+                            <StackPanel  Margin="0,0,0,0" 
+                                         Orientation="Vertical" 
+                                         VerticalAlignment="Bottom">
+
+                                <StackPanel Orientation="Horizontal">
+
+                                    <TextBlock FontSize="15" 
+                                               Foreground="Gray" 
+                                               HorizontalAlignment="Center" 
+                                               VerticalAlignment="Center">Gender
+                                    </TextBlock>
+
+                                    <RadioButton
+                                        Margin="10,0,0,0"
+                                        Content="Male"
+                                        x:Name="g_m"
+                                        IsChecked="True"
+                                        Style="{StaticResource MaterialDesignRadioButton}" />
+
+                                    <RadioButton  
+                                        Margin="30,0,0,0"
+                                        Content="Female"
+                                        x:Name="g_f"
+                                        Style="{StaticResource MaterialDesignRadioButton}" />
+                                </StackPanel>
+                                <TextBlock  Foreground="red" x:Name="g_v" >*</TextBlock>
+
+                            </StackPanel>
+
+                        </StackPanel>
+
+                    </Grid>
+                </StackPanel>
+
+                
+
+
+                <StackPanel Grid.Row="2" 
+                            Orientation="Vertical" 
+                            VerticalAlignment="Top" 
+                            HorizontalAlignment="Center">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Orientation="Horizontal" 
+                                    HorizontalAlignment="Left" 
+                                    VerticalAlignment="Top"
+                                     Grid.Row="0">
+                            
+                            <StackPanel Margin="0,0,10,0" Orientation="Vertical" VerticalAlignment="Bottom">
+                                <ComboBox
+                                x:Name="clz_1"                     
+                                Width="300"
+                                FontSize="15"
+                                materialDesign:HintAssist.Hint="Class One--">
+
+                                </ComboBox>
+                                <TextBlock  Foreground="red" x:Name="clz1_v" >*</TextBlock>
+
+                            </StackPanel>
+                            <StackPanel Margin="0,0,10,0" Orientation="Vertical" VerticalAlignment="Bottom">
+                                <ComboBox
+                                x:Name="clz_2"                                
+                                Width="300"
+                                FontSize="15"
+                                materialDesign:HintAssist.Hint="Class Two">
+
+                                </ComboBox>
+                                <TextBlock  Foreground="red" x:Name="clz2_v" >*</TextBlock>
+
+                            </StackPanel>
+                            <StackPanel Margin="0,0,10,0" Orientation="Vertical" VerticalAlignment="Bottom">
+                                <ComboBox
+                                x:Name="clz_3"
+                                Width="300"
+                                FontSize="15"
+                                materialDesign:HintAssist.Hint="Class Three">
+
+                                </ComboBox>
+                                <TextBlock  Foreground="red" x:Name="clz13v" >*</TextBlock>
+
+                            </StackPanel>
+
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical" 
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Bottom"
+                                    Grid.Row="1">
+                            
+                            
+                            
+                            
+                                <Image Height="200" Width="450" x:Name="barcode">
+
+                                </Image>
+                           
+                        </StackPanel>
+                        
+                    </Grid>
+                </StackPanel>
+
+
+
+
+                <StackPanel Grid.Row="3"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right" 
+                        VerticalAlignment="Top">
+
+                    <Button 
+                        Margin="0,0,55,0"
+                        x:Name="save_btn"
+                        Content="SAVE"
+                        BorderBrush="Gray"
+                        BorderThickness="1"
+                        Click="save_btn_Click"
+                        Foreground="White"/>
+                </StackPanel>
+                
+            </Grid>
+        </materialDesign:Card>
+        
+    </Grid>
+</Page>

@@ -1,0 +1,15 @@
+﻿<Window x:Class="ECMSystem.testing.test1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ECMSystem.testing"
+        mc:Ignorable="d"
+        Title="test1" Height="450" Width="800">
+    <Grid Loaded="start">
+        <ComboBox x:Name="urs" HorizontalAlignment="Left" Margin="147,106,0,0" VerticalAlignment="Top" Width="256" Height="38"/>
+        <Label x:Name="l" Content="Label" HorizontalAlignment="Left" Margin="185,283,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="le" HorizontalAlignment="Left" Margin="370,232,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

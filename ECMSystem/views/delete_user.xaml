@@ -1,0 +1,98 @@
+﻿<Window x:Class="ECMSystem.views.delete_user"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ECMSystem.views" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        BorderBrush="Gray"
+        BorderThickness="2"
+        WindowStartupLocation="CenterScreen"
+        Title="" Height="320" Width="450">
+    
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                     Orientation="Horizontal"
+                     VerticalAlignment="Top"
+                     HorizontalAlignment="Right">
+            
+            <Button Background="White" 
+                    Foreground="Red" 
+                    BorderBrush="{x:Null}" 
+                    BorderThickness="2" 
+                    x:Name="close_btn" 
+                    Click="close_btn_Click">
+                <materialDesign:PackIcon Kind="Close"  Width="20" Height="20"/>
+            </Button>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Margin="20,0,0,0">
+            <TextBlock
+                FontSize="25"
+                Foreground="Gray"
+                Grid.ColumnSpan="2"
+                Text="User Delete" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" 
+                    HorizontalAlignment="Center" 
+                    Margin="15">
+            
+            <TextBox Width="250" 
+                     FontSize="15"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     materialDesign:HintAssist.Hint="Enter ID" 
+                     x:Name="s_box"
+                     TextChanged="s_box_TextChanged"
+                     Margin="10,0,10,10" />
+
+
+            <TextBlock x:Name="name" 
+                       FontSize="15" 
+                       Margin="10"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       />
+
+            <TextBlock x:Name="nic"
+                       FontSize="15" 
+                       Margin="10"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+            
+            <Button   
+                    x:Name="del_btn" 
+                    Click="del_btn_Click"  
+                    Height="40" 
+                    Background="Red" 
+                    Foreground="White"
+                    VerticalAlignment="Bottom" 
+                    HorizontalAlignment="Right"
+                    Margin="5">
+                
+                <StackPanel  Orientation="Horizontal" 
+                             VerticalAlignment="Bottom" 
+                             HorizontalAlignment="Right">
+                    <materialDesign:PackIcon Kind="Delete" Margin="5"/>
+                    <TextBlock Margin="5">DELETE</TextBlock>
+                </StackPanel>
+                
+            </Button>
+
+            <TextBlock Foreground="Red" 
+                       x:Name="msg" 
+                       Margin="10" 
+                       FontSize="18" 
+                       HorizontalAlignment="Center"/>
+        </StackPanel>
+        
+    </Grid>
+</Window>

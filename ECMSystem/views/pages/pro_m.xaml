@@ -1,0 +1,195 @@
+﻿<Page x:Class="ECMSystem.views.pages.pro_m"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ECMSystem.views.pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      Loaded="Page_Loaded"
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="user_m">
+
+    <Grid Margin="10">
+
+        <materialDesign:Card UniformCornerRadius="10" Background="White" Margin="10,0,10,10" Padding="20">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Vertical">
+                    <StackPanel 
+                    
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center">
+
+                        <TextBlock 
+                        Text="NIC  :-" 
+                        FontSize="20" 
+                        FontWeight="Bold" 
+                        Foreground="Gray"/>
+
+                        <TextBlock 
+                        x:Name="show_nic" 
+                        Margin="30,0,0,0" 
+                        Text="" 
+                        FontSize="20" 
+                        FontWeight="Bold" 
+                        Foreground="Gray"/>
+
+                    </StackPanel>
+                    <TextBlock x:Name="up_msg" FontSize="20" HorizontalAlignment="Center"></TextBlock>
+                </StackPanel>
+
+
+                <StackPanel 
+                    Grid.Row="1" 
+                    Orientation="Horizontal">
+
+                    <StackPanel>
+                        <TextBox 
+                            x:Name="f_name" 
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            materialDesign:HintAssist.Hint="First Name"
+                            Width="350"
+                            FontSize="15"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Center"/>
+
+                    </StackPanel>
+
+                    <StackPanel>
+                        <TextBox 
+                            x:Name="l_name" 
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                            materialDesign:HintAssist.Hint="Last Name"
+                            Width="350"
+                            FontSize="15"
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Top" 
+                            Margin="30,0,0,0" 
+                            />
+                    </StackPanel>
+                </StackPanel>
+
+
+                <StackPanel 
+                    Grid.Row="2" 
+                    Orientation="Horizontal">
+
+                    <TextBox 
+                        x:Name="tel" 
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        materialDesign:HintAssist.Hint="Telephone"
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Top" 
+                        FontSize="15"
+                        Width="450"/>
+                </StackPanel>
+
+
+                <StackPanel 
+                    Grid.Row="3" 
+                    Orientation="Horizontal">
+
+                    <Button 
+                        x:Name="chg_pwd_btn"
+                        Click="chg_pwd_btn_Click"
+                        FontSize="15"
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        Background="#FF198FE0"
+                        Foreground="White"
+                        ToolTip="Resource name: MaterialDesignRaisedButton"
+                        Content="Change Password"/>
+                </StackPanel>
+
+
+                <StackPanel Grid.Row="4" x:Name="ch_pw" Orientation="Vertical" HorizontalAlignment="Left">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"></RowDefinition>
+                            <RowDefinition Height="40"></RowDefinition>
+                            <RowDefinition Height="60"></RowDefinition>
+                            <RowDefinition Height="40"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <PasswordBox
+                                Margin="20,0,0,0"
+                                x:Name="pwd_old"                            
+                                FontSize="15"
+                                Width="350"                               
+                                Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
+                                materialDesign:HintAssist.Hint="Enter Old Password"
+                                materialDesign:TextFieldAssist.HasClearButton="True"
+                                />
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <PasswordBox
+                                Margin="20,0,0,0"
+                                x:Name="pwd_new"                            
+                                FontSize="15"
+                                Width="350"                               
+                                Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
+                                materialDesign:HintAssist.Hint="Enter New Password"
+                                materialDesign:TextFieldAssist.HasClearButton="True"
+                                />
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                            <PasswordBox
+                                Margin="20,0,0,0"
+                                x:Name="pwd_cfm"                            
+                                FontSize="15"
+                                Width="350"                               
+                                Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
+                                materialDesign:HintAssist.Hint="Confirm Password"
+                                materialDesign:TextFieldAssist.HasClearButton="True"
+                                />
+                            <TextBlock Margin="20,0,0,0" Foreground="red" x:Name="pw_v"></TextBlock>
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" >
+                            <Button
+                                x:Name="btn_save"
+                                Click="btn_save_Click"
+                                FontSize="15"
+                                Style="{StaticResource MaterialDesignRaisedButton}"
+                                Background="#FF198FE0"
+                                Foreground="White"
+                                ToolTip="Resource name: MaterialDesignRaisedButton"
+                                Content="Save" />
+                        </StackPanel>
+
+                    </Grid>
+
+                </StackPanel>
+
+                <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0">
+                    <Button
+                        x:Name="up_save_btn"
+                        Click="up_save_btn_Click"
+                        FontSize="15"
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        Background="#FF198FE0"
+                        Foreground="White"
+                        ToolTip="Resource name: MaterialDesignRaisedButton"
+                        Content="Update" />
+                </StackPanel>
+
+            </Grid>
+
+        </materialDesign:Card>
+
+
+    </Grid>
+</Page>

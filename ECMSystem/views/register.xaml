@@ -1,0 +1,232 @@
+﻿<Window x:Class="ECMSystem.views.register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ECMSystem.views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        BorderBrush="Gray"
+        BorderThickness="2"
+        Title="register" Height="600" Width="720">
+    
+    <Grid Background="White">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel 
+            Grid.Row="0" 
+            Orientation="Horizontal" 
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Top">
+
+            <Button Background="White" 
+                    Foreground="Red" 
+                    BorderBrush="{x:Null}" 
+                    BorderThickness="0" 
+                    x:Name="close_btn" 
+                    Click="close_btn_Click">
+                <materialDesign:PackIcon Kind="Close"  />
+            </Button>
+        </StackPanel>
+        
+        <Grid Grid.Row="1" Margin="10" >
+            <Grid.ColumnDefinitions>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock
+                Grid.Row="0"
+                FontSize="40"
+                Foreground="Gray"
+                Margin="10,0,0,0" Grid.ColumnSpan="2"
+                >User Registration</TextBlock>
+
+
+            <Grid Grid.Row="1" HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+
+
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Horizontal">
+
+
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Bottom">
+                        <TextBox
+                          
+                            FontSize="15"
+                            x:Name="f_name"
+                            Width="300"
+                            materialDesign:HintAssist.Hint="First Name "
+                            materialDesign:TextFieldAssist.HasClearButton="True"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            VerticalAlignment="Center" />
+                        <TextBlock Foreground="red" x:Name="f_name_v" >*</TextBlock>
+                    </StackPanel>
+
+
+                    <StackPanel  Margin="30,0,0,0" Orientation="Vertical" VerticalAlignment="Bottom">
+                        <TextBox
+                           
+                            Grid.Row="0"
+                            FontSize="15"
+                            x:Name="l_name"
+                            Width="300"
+                            materialDesign:HintAssist.Hint="Last Name "
+                            materialDesign:TextFieldAssist.HasClearButton="True"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            VerticalAlignment="Center" />
+                        <TextBlock  Foreground="red" x:Name="l_name_v" >*</TextBlock>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Bottom">
+                        <DatePicker
+                            x:Name="dob"
+                            Width="300"
+                            FontSize="15"
+                            materialDesign:HintAssist.Hint="Date Of Birth" />
+                        <TextBlock  Foreground="red" x:Name="dob_v" >*</TextBlock>
+                    </StackPanel>
+                    <StackPanel Margin="30,0,0,0" Orientation="Vertical" VerticalAlignment="Bottom">
+                        <TextBox
+                                FontSize="15"
+                                x:Name="nic"
+                                Width="300"
+                                materialDesign:HintAssist.Hint="NIC Number "
+                                materialDesign:TextFieldAssist.HasClearButton="True"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                VerticalAlignment="Center" />
+                        <TextBlock  Foreground="red" x:Name="nic_v" >*</TextBlock>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Bottom">
+                        <TextBox
+                           
+                                FontSize="15"
+                                x:Name="tele"
+                                Width="300"
+                                materialDesign:HintAssist.Hint="Telephone number "
+                                materialDesign:TextFieldAssist.HasClearButton="True"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                VerticalAlignment="Center" />
+                        <TextBlock  Foreground="red" x:Name="tele_v" >*</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Margin="30,0,0,0" Orientation="Vertical" VerticalAlignment="Bottom">
+                        <TextBox
+                            FontSize="15"
+                            x:Name="addr"
+                            Width="300"
+                            materialDesign:HintAssist.Hint="Address "
+                            materialDesign:TextFieldAssist.HasClearButton="True"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            VerticalAlignment="Center" />
+                        <TextBlock  Foreground="red" x:Name="addr_v" >*</TextBlock>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Row="3" Orientation="Horizontal">
+
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Bottom">
+                        <ComboBox
+                                x:Name="user_type"
+                                Width="300"
+                                FontSize="15"
+                                materialDesign:HintAssist.Hint="--select user type--">
+                            <ComboBoxItem
+                                Content="Manager" />
+                            <ComboBoxItem
+                                Content="Attendence marker" />
+                            <ComboBoxItem
+                                Content="Cashier" />
+                        </ComboBox>
+                        <TextBlock  Foreground="red" x:Name="user_type_v" >*</TextBlock>
+
+                    </StackPanel>
+                    <StackPanel  Margin="30,0,0,0" Orientation="Vertical" VerticalAlignment="Bottom">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontSize="15" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center">Gender</TextBlock>
+                            <RadioButton
+                                Margin="10,0,0,0"
+                                Content="Male"
+                                x:Name="g_m"
+                                IsChecked="True"
+                                Style="{StaticResource MaterialDesignRadioButton}" />
+                            <RadioButton
+                                Margin="30,0,0,0"
+                                Content="Female"
+                                x:Name="g_f"
+                            
+                                Style="{StaticResource MaterialDesignRadioButton}" />
+                        </StackPanel>
+                        <TextBlock  Foreground="red" x:Name="g_v" >*</TextBlock>
+                    </StackPanel>
+
+                </StackPanel>
+
+
+                <StackPanel Grid.Row="4" Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Bottom">
+                        <PasswordBox
+                                x:Name="pw_box"
+                            
+                                FontSize="15"
+                                Width="300"
+                                Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
+                                materialDesign:HintAssist.Hint="Password"
+                                materialDesign:TextFieldAssist.HasClearButton="True"
+                               />
+                        <TextBlock  Foreground="red" x:Name="pw_v" >*</TextBlock>
+                    </StackPanel>
+                    <StackPanel  Margin="30,0,0,0" Orientation="Vertical" VerticalAlignment="Bottom">
+                        <PasswordBox
+                                x:Name="cpw_box"                            
+                                FontSize="15"
+                                Width="300"                               
+                                Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
+                                materialDesign:HintAssist.Hint="Confirm Password"
+                                materialDesign:TextFieldAssist.HasClearButton="True"
+                                />
+                        <TextBlock  Foreground="red" x:Name="cpw_v" >*</TextBlock>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="5" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <Button
+                        x:Name="save_btn"
+                        Click="save_btn_Click"
+                        FontSize="15"
+                        Margin="0,0,0,0"
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        Background="#FF198FE0"
+                        Foreground="White"
+                        ToolTip="Resource name: MaterialDesignRaisedButton"
+                        Content="SAVE" />
+                </StackPanel>
+
+
+            </Grid>
+
+
+        </Grid>
+    </Grid>
+</Window>

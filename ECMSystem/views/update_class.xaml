@@ -1,0 +1,239 @@
+﻿<Window x:Class="ECMSystem.views.update_class"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ECMSystem.views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        BorderThickness="2"
+        BorderBrush="Gray"
+        Title="update_class" Height="520" Width="720">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Grid.Row="0" 
+            Orientation="Horizontal" 
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Top">
+
+            <Button Background="White" 
+                    Foreground="Red" 
+                    BorderBrush="{x:Null}" 
+                    BorderThickness="0" 
+                    x:Name="close_btn_cls" 
+                    Click="close_btn_cls_Click">
+                <materialDesign:PackIcon Kind="Close" Height="20" Width="20" />
+            </Button>
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="1" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Center" 
+                    Margin="25,0,0,0">
+            <TextBlock
+                FontSize="35"
+                Foreground="Gray"
+                Grid.ColumnSpan="2"
+                Text="Update Class Details" />
+        </StackPanel>
+
+        <StackPanel
+            Grid.Row="2" 
+            Margin="0,20,0,0"
+            Orientation="Vertical" 
+            HorizontalAlignment="Center" 
+            >
+
+            <TextBox
+                  Grid.Row="0"
+                  FontSize="20"
+                  x:Name="clz_id_txt"
+                  TextChanged="clz_id_txt_TextChanged"
+                  Width="300"
+                  materialDesign:HintAssist.Hint="Enter Class Id "
+                  materialDesign:TextFieldAssist.HasClearButton="True"
+                  VerticalAlignment="Center" />
+
+            <TextBlock HorizontalAlignment="Center"
+                       x:Name="msg"
+                       FontSize="15"
+                       Foreground="Blue"/></StackPanel>
+        
+        
+
+        <Grid Grid.Row="3" Margin="10" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackPanel>
+                
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10,10,10,0">
+
+
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                    <TextBox
+                            FontSize="20"
+                            x:Name="cls_name"
+                            Width="300"
+                            materialDesign:HintAssist.Hint="Class Name"
+                            materialDesign:TextFieldAssist.HasClearButton="True"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            VerticalAlignment="Center" />
+                    <TextBlock Foreground="red" x:Name="cls_name_v" >*</TextBlock>
+                </StackPanel>
+
+
+                <StackPanel  Margin="30,0,0,0" 
+                             Orientation="Vertical" 
+                             VerticalAlignment="Center">
+                    <TextBox
+                            FontSize="20"
+                            x:Name="fees"
+                            Width="300"
+                            materialDesign:HintAssist.Hint="Fees"
+                            materialDesign:TextFieldAssist.HasClearButton="True"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            VerticalAlignment="Center" />
+                    <TextBlock  Foreground="red" x:Name="fee_v" >*</TextBlock>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" 
+                        Orientation="Vertical" 
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Bottom"
+                        Margin="10,0,0,0">
+                <ComboBox
+                        x:Name="select_weekday"
+                        Width="400"
+                        FontSize="20"
+                        materialDesign:HintAssist.Hint=" Select a WeekDay--">
+                    <ComboBoxItem
+                                Content="Monday" />
+                    <ComboBoxItem
+                                Content="Tuesday" />
+                    <ComboBoxItem
+                                Content="Wednesday" />
+                    <ComboBoxItem
+                                Content="Thursday" />
+                    <ComboBoxItem
+                                Content="Friday" />
+                    <ComboBoxItem
+                                Content="Satarday" />
+                    <ComboBoxItem
+                                Content="Sunday" />
+                </ComboBox>
+                <TextBlock Foreground="red" x:Name="weekday_v" >*</TextBlock>
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="2" 
+                        Orientation="Horizontal" 
+                        VerticalAlignment="Bottom" 
+                        HorizontalAlignment="Left"
+                        Margin="10,0,0,0">
+
+                <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" >
+                    <materialDesign:TimePicker
+                          Width="300"
+                          FontSize="20"
+                          x:Name="start_time"
+                         
+                          Style="{StaticResource MaterialDesignFloatingHintTimePicker}"
+                          materialDesign:HintAssist.Hint="Start time" />
+                    <TextBlock  Foreground="red" x:Name="start_time_v" >*</TextBlock>
+                </StackPanel>
+
+
+                <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" Margin="30,0,0,0">
+                    <materialDesign:TimePicker
+                          Width="300"
+                          FontSize="20"
+                          x:Name="end_time"
+                         
+                          Style="{StaticResource MaterialDesignFloatingHintTimePicker}"
+                          materialDesign:HintAssist.Hint="End time" />
+                    <TextBlock  Foreground="red" x:Name="end_time_v" >*</TextBlock>
+                </StackPanel>
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="3" 
+                        Orientation="Horizontal" 
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Bottom">
+
+                <StackPanel 
+                        Orientation="Vertical" 
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Center"
+                        Margin="10,0,0,0">
+                    <ComboBox
+                        x:Name="subject_select"
+                        Width="300"
+                        FontSize="20"
+                        materialDesign:HintAssist.Hint=" Subject---">
+                        
+                    </ComboBox>
+                    <TextBlock Foreground="red" x:Name="subject_v" >*</TextBlock>
+                </StackPanel>
+
+                <StackPanel 
+                        Orientation="Vertical" 
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Center"
+                        Margin="30,0,0,0">
+                    <ComboBox
+                        x:Name="teacher_select"
+                        Width="300"
+                        FontSize="20"
+                        materialDesign:HintAssist.Hint=" Teacher---">
+                        
+
+                    </ComboBox>
+                    <TextBlock Foreground="red" x:Name="teacher_v" >*</TextBlock>
+                </StackPanel>
+
+
+            </StackPanel>
+
+            <StackPanel  Grid.Row="4" 
+                     Orientation="Horizontal" 
+                     HorizontalAlignment="Right"
+                     VerticalAlignment="Center">
+
+                <Button x:Name="up_clz_btn"
+                    Content="Update Class"
+                    Click="up_clz_btn_Click"
+                    HorizontalAlignment="Right"
+                    Foreground="White"
+                    Margin="0,0,8,0"
+                    />
+            </StackPanel>
+
+        </Grid>
+
+
+    </Grid>
+</Window>

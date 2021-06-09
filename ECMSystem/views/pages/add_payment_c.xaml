@@ -1,0 +1,126 @@
+﻿<Page x:Class="ECMSystem.views.pages.add_payment_c"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ECMSystem.views.pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="add_payment_c">
+
+    <Grid Background="{x:Null}" Margin="10">
+        <materialDesign:Card Background="White" UniformCornerRadius="10" Loaded="page_load">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Horizontal" 
+                            Grid.Row="0" 
+                            VerticalAlignment="Center"
+                            Margin="30,0,0,0">
+
+                    <TextBlock 
+                             Foreground="Gray"
+                             FontSize="40">Add Payment</TextBlock>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" 
+                            Orientation="Vertical" 
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Center"
+                            Margin="10">
+
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70"></RowDefinition>
+                            <RowDefinition Height="220"></RowDefinition>
+                            <RowDefinition Height="75"></RowDefinition>
+                            <RowDefinition Height="80"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <ComboBox                                
+                                x:Name="sel_cam"
+                                Width="230"
+                                FontSize="20"                              
+                                materialDesign:HintAssist.Hint="Select Camera"/>
+                            <Button x:Name="stat_cam" Click="stat_cam_Click" Foreground="White" Background="Green" Margin="20,0,0,0" FontSize="15">start</Button>
+                            <Button x:Name="stop_cam" Click="stop_cam_Click" Foreground="White" Background="red" Margin="10,0,0,0" FontSize="15">stop</Button>
+                            
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="1"
+                                    HorizontalAlignment="Center"
+                                    
+                                    >
+                            <Image x:Name="barcode_img"        
+                                Margin="20"
+                                Width="500"
+                                Height="200"
+                                />
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBox
+                                FontSize="20"
+                                x:Name="nic_p"
+                                TextChanged="nic_p_TextChanged"
+                                Width="500"
+                                Margin="10"
+                                materialDesign:HintAssist.Hint="NIC"
+                                materialDesign:TextFieldAssist.HasClearButton="True"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                />
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <ComboBox
+                                x:Name="class_select"
+                                Width="350"
+                                Height="40"
+                                FontSize="20"
+                                DropDownClosed="class_select_DropDownClosed"                    
+                                materialDesign:HintAssist.Hint="Select Class"
+                                HorizontalAlignment="Center">
+                            </ComboBox>
+
+                            <Button x:Name="add_pay" 
+                                    Content="Add Payment" 
+                                    Width="120"
+                                    Margin="30,0,0,0"
+                                    Height="40"
+                                    Click="add_pay_Click"
+                                    Foreground="White"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center">
+                                
+                            </Button>
+                            
+                        </StackPanel>
+                        <TextBlock Grid.Row="4"  x:Name="msg" HorizontalAlignment="Center" Foreground="Green" FontSize="20"></TextBlock>
+                        
+                    </Grid>
+                    
+                    
+                    
+                    
+                    
+
+
+                    
+
+
+                    
+
+                </StackPanel>
+                
+                
+            </Grid>
+
+        </materialDesign:Card>
+    </Grid>
+</Page>

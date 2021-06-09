@@ -1,0 +1,33 @@
+﻿<Window x:Class="ECMSystem.custom_controlles.msgbox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ECMSystem.custom_controlles"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="White"
+        BorderBrush="Black"
+        BorderThickness="1"
+        WindowStartupLocation="CenterScreen"
+        Title="msgbox" Height="200" Width="300">
+    <Grid>
+        
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="icon" Width="80" Height="80" Kind="CloseOctagon" />
+                    <TextBlock HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" x:Name="heading">head</TextBlock>
+                    <TextBlock HorizontalAlignment="Center" FontSize="13" x:Name="subhead">testdfdfdfd</TextBlock>
+                </StackPanel>
+                
+                <StackPanel Margin="10,30,10,10" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="ok_btn" Click="ok_btn_Click" Foreground="White" Margin="10,0,10,0" Width="80">ok</Button>
+                    <Button x:Name="cancle_btn" Click="cancle_btn_Click" Foreground="White" Margin="10,0,10,0" Width="80">cancle</Button>
+                    
+                </StackPanel>
+            </StackPanel>
+        
+    </Grid>
+</Window>

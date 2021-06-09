@@ -1,0 +1,186 @@
+﻿<Window x:Class="ECMSystem.views.update_student"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ECMSystem.views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        BorderBrush="Gray"
+        BorderThickness="2"
+        Title="update_student" Height="500" Width="1000">
+
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="55"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Grid.Row="0" 
+            Orientation="Horizontal" 
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Top">
+
+            <Button Background="White" 
+                    Foreground="Red" 
+                    BorderBrush="{x:Null}" 
+                    BorderThickness="1" 
+                    x:Name="close_btn_cls" 
+                    Click="close_btn_cls_Click">
+                <materialDesign:PackIcon Kind="Close" Height="20" Width="20" />
+            </Button>
+        </StackPanel>
+
+        
+        
+        <StackPanel Grid.Row="1" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Center" 
+                    Margin="25,0,0,10">
+            <TextBlock
+                FontSize="35"
+                Foreground="Gray"
+                Grid.ColumnSpan="2"
+                Text="Update Student Details" />
+        </StackPanel>
+
+
+        <StackPanel
+            Grid.Row="2" 
+            Margin="0,20,0,0"
+            Orientation="Vertical" 
+            HorizontalAlignment="Center" 
+            >
+            <TextBlock HorizontalAlignment="Center"
+                       x:Name="nic_txt"
+                       FontSize="20"
+                       
+                       />
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="3" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Grid Margin="0,10,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"></RowDefinition>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="70"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" 
+                                    Orientation="Horizontal" 
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center" >
+
+                    <StackPanel Orientation="Vertical" 
+                                            VerticalAlignment="Bottom">
+                        <TextBox
+                                        FontSize="15"
+                                        x:Name="f_name"
+                                        Width="300"
+                                        materialDesign:HintAssist.Hint="First Name"
+                                        materialDesign:TextFieldAssist.HasClearButton="True"
+                                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                        VerticalAlignment="Center" />
+                        <TextBlock Foreground="red" 
+                                               x:Name="f_name_v" >*</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel  Margin="30,0,0,0" 
+                                             Orientation="Vertical" 
+                                             VerticalAlignment="Bottom">
+                        <TextBox
+                                        Grid.Row="0"
+                                        FontSize="15"
+                                        x:Name="l_name"
+                                        Width="300"
+                                        materialDesign:HintAssist.Hint="Last Name "
+                                        materialDesign:TextFieldAssist.HasClearButton="True"
+                                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                        VerticalAlignment="Center" />
+                        <TextBlock  Foreground="red" 
+                                    x:Name="l_name_v" >*
+                        </TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Margin="30,15,0,0" 
+                                             Orientation="Vertical" 
+                                             HorizontalAlignment="Center" 
+                                             VerticalAlignment="Center">
+                        <DatePicker
+                                            x:Name="dob"
+                                            Width="300"
+                                            FontSize="15"
+                                            materialDesign:HintAssist.Hint="Date Of Birth" />
+                        <TextBlock  Foreground="red" 
+                                     x:Name="dob_v" >*
+                        </TextBlock>
+
+                    </StackPanel>
+                </StackPanel>
+
+
+
+
+                <StackPanel Grid.Row="1"
+                                    
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top">
+
+
+
+                    <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                        <TextBox
+                                FontSize="15"
+                                x:Name="tel"
+                                Width="300"
+                                materialDesign:HintAssist.Hint="Telephone Number "
+                                materialDesign:TextFieldAssist.HasClearButton="True"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                VerticalAlignment="Center" />
+                        <TextBlock  Foreground="red" x:Name="tele_v" >*</TextBlock>
+
+                    </StackPanel>
+
+                    <StackPanel Margin="30,0,0,0" Orientation="Vertical">
+                        <TextBox
+                                    FontSize="15"
+                                    x:Name="addr"
+                                    Width="300"
+                                    materialDesign:HintAssist.Hint="Address "
+                                    materialDesign:TextFieldAssist.HasClearButton="True"
+                                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                    VerticalAlignment="Center" />
+                        <TextBlock  Foreground="red" x:Name="addr_v" >*</TextBlock>
+
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel  Grid.Row="4" 
+                     Orientation="Horizontal" 
+                     HorizontalAlignment="Right"
+                     VerticalAlignment="Top">
+
+            <Button x:Name="upd_st_btn"
+                    Content="Update Student"
+                    Click="upd_st_btn_Click"
+                    HorizontalAlignment="Right"
+                    Foreground="White"
+                    Margin="0,0,30,0"
+                    />
+        </StackPanel>
+
+    </Grid>
+</Window>

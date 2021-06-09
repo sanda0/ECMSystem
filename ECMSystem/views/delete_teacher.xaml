@@ -1,0 +1,96 @@
+﻿<Window x:Class="ECMSystem.views.delete_teacher"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ECMSystem.views" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        BorderBrush="Gray"
+        BorderThickness="2"
+        Title="delete_teacher" Height="350" Width="350">
+    
+    <Grid Background="White">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0" 
+                    HorizontalAlignment="Right" 
+                    Orientation="Horizontal">
+            
+           
+            
+            <Button x:Name="close_btn" 
+                    Click="close_btn_Click" 
+                    Background="White"
+                    VerticalAlignment="Top"
+                    BorderBrush="{x:Null}"
+                    BorderThickness="0">
+                
+                <materialDesign:PackIcon Kind="Close" Height="20" Width="20" Foreground="Red" />
+            </Button>
+
+        </StackPanel>
+        
+        
+        <StackPanel Grid.Row="1" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Center">
+            
+             <TextBlock Margin="20,0,0,0" 
+                        FontSize="25"
+                       Foreground="Gray" 
+                       >Delete Teacher
+            </TextBlock>
+        </StackPanel>
+        
+        
+        <StackPanel Grid.Row="2" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center">
+
+            <TextBox Width="250" 
+                     FontSize="20" 
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     materialDesign:HintAssist.Hint="Enter ID" 
+                     x:Name="s_box"
+                     TextChanged="s_box_TextChanged"
+                     Margin="20"/>
+
+
+            <TextBlock x:Name="name" 
+                       FontSize="20" 
+                       HorizontalAlignment="Center"/>
+
+            <Button Margin="20"  
+                    x:Name="del_btn" 
+                    Click="del_btn_Click"  
+                    Height="40" 
+                    Background="Red" 
+                    Foreground="White"
+                    HorizontalAlignment="Right">
+                
+                <StackPanel  Orientation="Horizontal">
+                    
+                    <materialDesign:PackIcon Kind="Delete" Margin="5"/>
+                    
+                    <TextBlock Margin="5">DELETE</TextBlock>
+                    
+                </StackPanel>
+
+            </Button>
+
+            <TextBlock Foreground="Red" 
+                       x:Name="msg" 
+                       FontSize="18" 
+                       HorizontalAlignment="Center"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

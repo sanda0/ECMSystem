@@ -1,0 +1,110 @@
+﻿<Page x:Class="ECMSystem.views.pages.student_m"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ECMSystem.views.pages" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="student_m" >
+
+    <Grid Margin="10">
+        <materialDesign:Card UniformCornerRadius="10" Background="#fff">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center">
+                    <CheckBox
+                            Margin="0,20,4,0"
+                            IsChecked="True"
+                            x:Name="class_select_on_off"
+                            Click="class_select_on_off_Click"
+
+                            
+                            materialDesign:CheckBoxAssist.CheckBoxSize="30" />
+                    <ComboBox
+                            x:Name="class_select"
+                            Width="150"
+                            FontSize="15"
+                            Margin="0,20,10,0"
+                            DropDownClosed="class_select_DropDownClosed"
+                            materialDesign:HintAssist.Hint="Select Class">
+                        
+
+                    </ComboBox>
+                    <ComboBox
+                            x:Name="search_by"
+                            Width="100"
+                            FontSize="15"
+                            Margin="0,20,10,0"
+                            
+                            materialDesign:HintAssist.Hint="Search by">
+                        <ComboBoxItem
+                            Content="By Name" />
+                        <ComboBoxItem
+                            Content="By NIC" />
+                   
+                    </ComboBox>
+
+                    <TextBox x:Name="search_box" Width="250" FontSize="15" Height="50"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                             materialDesign:HintAssist.Hint="Search.."
+                             TextChanged="search_box_TextChanged"
+                             ></TextBox>
+
+                </StackPanel>
+                <StackPanel Grid.Row="1">
+
+                    <ScrollViewer Margin="20" VerticalScrollBarVisibility="Auto">
+                        <StackPanel>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Gray" FontSize="20">Student Details</TextBlock>
+                            <DataGrid  x:Name="stu_table" ColumnWidth="auto" AutoGenerateColumns="False" CanUserAddRows="False" >
+                                <DataGrid.Columns  >
+                                    <DataGridTextColumn  Header="ID" Binding="{Binding id}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="First Name" Binding="{Binding f_name}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Last Name" Binding="{Binding l_name}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Date of Birth" Binding="{Binding dob}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="NIC" Binding="{Binding nic}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Telephone" Binding="{Binding tp}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Gender" Binding="{Binding gender}"></DataGridTextColumn>
+
+                                    <DataGridTemplateColumn>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button    Foreground="White"  Click="view_clz_Click" CommandParameter="{Binding id}" >Classes</Button>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn>                                        
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button   Background="Red" Foreground="White"  Click="del_stu_Click" CommandParameter="{Binding id}">Delete</Button>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    
+                                    <DataGridTemplateColumn >                                        
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button   Background="Green" Foreground="White"  Click="update_stu_Click" CommandParameter="{Binding id}">Update</Button>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    
+
+                                    
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+                    </ScrollViewer>
+                </StackPanel>
+                
+                
+            </Grid>
+        </materialDesign:Card>
+
+    </Grid>
+</Page>
